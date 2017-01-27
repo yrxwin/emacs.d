@@ -17,6 +17,18 @@
 ;;----------------------------------------------------------------------------
 ;; Temporarily reduce garbage collection during startup
 ;;----------------------------------------------------------------------------
+(set-face-attribute 'default (selected-frame) :height 120)
+(global-visual-line-mode 1)
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+              (ggtags-mode 1))))
+(setq-default c-basic-offset 4)
+(global-linum-mode 1)
+
+;;----------------------------------------------------------------------------
+;; Temporarily reduce garbage collection during startup
+;;----------------------------------------------------------------------------
 (defconst sanityinc/initial-gc-cons-threshold gc-cons-threshold
   "Initial value of `gc-cons-threshold' at start-up time.")
 (setq gc-cons-threshold (* 128 1024 1024))
