@@ -25,7 +25,6 @@
               (ggtags-mode 1))))
 (setq-default c-basic-offset 4)
 (global-linum-mode 1)
-(require 'clang-format)
 (global-set-key (kbd "C-c i") 'clang-format-region)
 
 ;;----------------------------------------------------------------------------
